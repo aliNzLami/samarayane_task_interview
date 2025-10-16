@@ -1,0 +1,55 @@
+@import './color.css';
+
+.authContainer {
+    background-color: var(--main-green);
+    transition: 0.3s;
+}
+
+.darkMode .authContainer {
+    background-color: var(--bg-darkMode);
+}
+
+.welcomeAuth {
+    color: var(--black-text);
+    font-weight: 800;
+    font-size: 65px;
+}
+
+.darkMode .welcomeAuth {
+    color: var(--main-green-darkMode);
+}
+
+@media (max-width: 500px) {
+    .welcomeAuth {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 320px) {
+    .welcomeAuth {
+        font-size: 35px;
+    }
+}
+
+.authCardContainer {
+    border: 2px solid var(--black-text);
+    color: var(--black-text);
+    font-weight: 500;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.darkMode .authCardContainer {
+    border: 2px solid var(--main-green-darkMode);
+    color: var(--main-green-darkMode);
+}
+
+.authCardContainer:hover {
+    background-color: #fff;
+}
+
+.authCardContainer_clicked {
+    background-color: #fff;
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+}

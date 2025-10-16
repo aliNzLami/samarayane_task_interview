@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import Login from "./(auth)/Login";
 
 export default async function Home() {
 
@@ -13,8 +14,6 @@ export default async function Home() {
     }
 
     return (
-      <>
-        LOGIN
-      </>
+      <Login />
     );
 }
