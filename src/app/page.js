@@ -1,33 +1,20 @@
-'use client'
-import { login } from "@/services/api/APIs";
-import { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
+import { cookies } from "next/headers";
 
-export default function Home() {
+export default async function Home() {
 
-    const [isLogged, setIsLogged] = useState(null);
+    let isLogged = null;
+    const cookieStore = await cookies();
+    
+    isLogged = cookieStore.get('token')?.value;
 
-    const authenticate = () => {
-      if(isLogged === false) {
-
-      }
-      else if(isLogged === true) {
-
-      }
+    if(isLogged) {
+      redirect('/dashboard')
     }
 
-    useEffect(() => {
-      authenticate()
-    }, [])
-    
     return (
       <>
-        {
-          isLogged === null
-          ?
-            <div>LOADING</div>
-          :
-            "NOTHING"
-        }
+        LOGIN
       </>
     );
 }
