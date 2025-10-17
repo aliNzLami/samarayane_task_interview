@@ -21,10 +21,7 @@ function Sidebar() {
                     }
                 </nav>
                 
-                <div>
-                    LIGHT SWITCH
-                    <Logout />
-                </div>
+                <Logout />
             </div>
         </>
     )

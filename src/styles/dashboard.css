@@ -44,3 +44,20 @@
 .darkMode .sidebarItems_active {
     border: 3px solid var(--bg-darkMode);
 }
+
+.topNav {
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    padding: 1rem;
+}
+
+.darkMode .topNav {
+    background-color: var(--main-green-darkMode);
+}
+
+.darkMode .topNavbarName {
+    font-weight: 600;
+}
