@@ -1,0 +1,33 @@
+@import './color.css';
+
+
+.dashboardBody {
+    background-color: var(--main-green);
+    direction: rtl;
+    transition: 0.3s;
+}
+
+.darkMode .dashboardBody {
+    background-color: var(--bg-darkMode);
+}
+
+.sidebar-desktop {
+    background-color: #fff;
+    position: fixed;
+    height: 100vh;
+    padding: 20px 30px;
+}
+
+.darkMode .sidebar-desktop {
+    background-color: var(--main-green-darkMode);
+}
+
+.sidebarItems {
+    font-size: 20px;
+}
+
+@media (max-width: 1148px) {
+    .sidebarItems {
+        font-size: 16px;
+    }
+}
