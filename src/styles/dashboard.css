@@ -15,7 +15,7 @@
     background-color: #fff;
     position: fixed;
     height: 100vh;
-    padding: 20px 30px;
+    padding: 20px;
 }
 
 .darkMode .sidebar-desktop {
@@ -30,4 +30,17 @@
     .sidebarItems {
         font-size: 16px;
     }
+}
+
+.darkMode .sidebarItems {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sidebarItems_active {
+    border: 3px solid var(--main-green-darkMode);
+}
+
+.darkMode .sidebarItems_active {
+    border: 3px solid var(--bg-darkMode);
 }

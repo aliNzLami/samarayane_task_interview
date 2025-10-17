@@ -1,5 +1,3 @@
-'use client'
-
 import logo from '@/assets/pics/public-health-icon.svg'
 import { dashboardRoutes } from '@/lib/dashboardRoutes'
 import Image from 'next/image'
@@ -17,13 +15,16 @@ function Sidebar() {
                     {
                         dashboardRoutes.map(item => {
                             return (
-                                <SidebarItems item={item} />
+                                <SidebarItems key={item.url} item={item} />
                             )
                         })
                     }
                 </nav>
-
-                <Logout />
+                
+                <div>
+                    LIGHT SWITCH
+                    <Logout />
+                </div>
             </div>
         </>
     )
