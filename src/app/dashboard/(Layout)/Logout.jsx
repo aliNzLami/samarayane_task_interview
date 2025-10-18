@@ -1,15 +1,17 @@
 'use client'
 
-import { useCallback } from "react"
+import { setLogoutModal } from "@/lib/redux/logoutSlice";
+import { useDispatch } from "react-redux";
 
 function Logout() {
 
-    const handleLogout = useCallback(() => {
-        
-    }) 
+    const dispatch = useDispatch();
 
     return (
-        <div onClick={handleLogout} className='sidebarItems text-20 mb-4 cursor-pointer'>
+        <div 
+            onClick={() => dispatch(setLogoutModal(true))}
+            className='sidebarItems text-20 mb-4 cursor-pointer'
+        >
             خروج
         </div>
     )

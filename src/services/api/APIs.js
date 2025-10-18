@@ -12,3 +12,9 @@ export const login = async () => {
     }
     return res;
 }
+
+export const logout = async () => {
+    const cookieStore = await cookies();
+    cookieStore.delete('token');
+    redirect('/');
+}

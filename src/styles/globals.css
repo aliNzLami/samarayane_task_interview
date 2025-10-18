@@ -96,6 +96,82 @@ body {
     z-index: 999,
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 300ms ease;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 300ms ease;
+}
+
+.darkMode .modal-content {
+  background-color: var(--main-green-darkMode);
+}
+
+.darkMode .modal-content span {
+  font-weight: 700;
+}
+
+.modal-content.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.modal-content.hide {
+  transform: scale(0.95);
+  opacity: 0;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 30px;
+  font-weight: 800;
+  cursor: pointer;
+  color: #000;
+  width: 100%;
+  text-align: end;
+}
+
+.close-button:hover {
+  color: #000;
+}
+
+.logoutBtn {
+  width: 100%;
+  margin-top: 50px;
+  background-color: var(--main-green-darkMode);
+  padding: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.darkMode .logoutBtn {
+  background-color: var(--bg-darkMode);
+  color: #fff;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
 
 /* --------------------------------- Animations --------------------------------- */
 
