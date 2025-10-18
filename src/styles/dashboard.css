@@ -61,3 +61,24 @@
 .darkMode .topNavbarName {
     font-weight: 600;
 }
+
+.dashboardContainer {
+    padding: 90px 17% 0 50px;
+}
+
+@media (max-width: 1024px) {
+    .dashboardContainer {
+        padding: 90px 25% 0 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        padding: 90px 20px 0;
+    }
+}
+
+.noPatients {
+    font-weight: 600;
+    color: var(--black-text);
+}

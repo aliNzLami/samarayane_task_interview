@@ -4,7 +4,9 @@ export default function DashboardLayout({ children }) {
     return (
       <div className="dashboardBody min-h-[100vh]">
         <DashboardLayoutContainer />
-        {children}
+        <div className="dashboardContainer">
+          {children}
+        </div>
       </div>
     );
 }

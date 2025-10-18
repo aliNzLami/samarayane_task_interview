@@ -10,7 +10,7 @@ function LoginBtn() {
 
     const handleCLick = () => {
         setLoading(true);
-        login(process.env.NEXT_PUBLIC_API_AUTH)
+        login()
         .then(res => {
             setLoading(false);
         })

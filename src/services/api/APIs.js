@@ -18,3 +18,19 @@ export const logout = async () => {
     cookieStore.delete('token');
     redirect('/');
 }
+
+const prepareToken = async () => {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('token')?.value;
+    return {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    }
+}
+
+export const get_patients = async () => {
+    const token = await prepareToken();
+    const res = await axiosClient.get(process.env.NEXT_PUBLIC_API_PATIENT, token);
+    return res.data.result;
+}
