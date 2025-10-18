@@ -1,8 +1,6 @@
-import React from 'react'
+'use client'
 
-function Table({list, header}) {
-    console.log(list);
-    
+function Table({list, header, onClickItems = () => {}}) {
     return (
         <div className="flex flex-col gap-1 rounded-xl bg-white bg-table-darkMode lg:bg-gray-950/5 p-1 inset-ring inset-ring-gray-950/5">
             <div className="not-prose overflow-auto rounded-lg bg-white bg-table-darkMode outline outline-white/5">
@@ -29,7 +27,7 @@ function Table({list, header}) {
                                                 {
                                                     Object.entries(item).map(element => {
                                                         return (
-                                                            <td key={element[0]} className="border-b border-gray-100 p-4 pl-8 font-medium txt-darkMode">
+                                                            <td onClick={() => onClickItems(item)} key={element[0]} className="cursor-pointer border-b border-gray-100 p-4 pl-8 font-medium txt-darkMode">
                                                                 {
                                                                     typeof(element[1]) === "string"
                                                                     ?

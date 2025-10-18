@@ -34,3 +34,9 @@ export const get_patients = async () => {
     const res = await axiosClient.get(process.env.NEXT_PUBLIC_API_PATIENT, token);
     return res.data.result;
 }
+
+export const delete_patients = async (id) => {
+    const token = await prepareToken();
+    const res = await axiosClient.delete(`${process.env.NEXT_PUBLIC_API_PATIENT}/${id}`, token);
+    return res.data;
+}

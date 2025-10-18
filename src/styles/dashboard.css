@@ -82,3 +82,26 @@
     font-weight: 600;
     color: var(--black-text);
 }
+
+.darkMode .patientInfoHolder {
+    background-color: var(--bg-darkMode);
+}
+
+.deletePatientBtn {
+    background-color: var(--main-brown);
+    color: var(--main-yellow);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.editPatientBtn {
+    background-color: transparent;
+    color: var(--main-brown);
+    border: 3px solid var(--main-brown);
+    cursor: pointer;
+}
+
+.darkMode .editPatientBtn {
+    color: var(--main-yellow);
+    border: 3px solid var(--main-yellow);
+}

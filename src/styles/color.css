@@ -1,6 +1,8 @@
 :root {
     --main-green: #c7fbd9;
     --black-text: #002629;
+    --main-yellow: rgb(255, 236, 148);
+    --main-brown: rgb(78, 46, 8);
 
     --main-green-darkMode: rgb(0, 169, 160);
     --bg-darkMode: rgb(0, 8, 19);
