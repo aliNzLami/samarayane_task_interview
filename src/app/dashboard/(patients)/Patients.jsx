@@ -1,9 +1,13 @@
+import AddPatient from "./AddPatient"
 import PatientsTable from "./PatientsTable"
 
 function Patients() {
     
     return (
-        <PatientsTable />
+        <>
+            <AddPatient />
+            <PatientsTable />
+        </>
     )
 }
 

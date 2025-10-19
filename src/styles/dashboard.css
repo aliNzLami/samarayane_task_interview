@@ -83,6 +83,10 @@
     color: var(--black-text);
 }
 
+.darkMode .noPatients {
+    color: var(--main-green-darkMode);
+}
+
 .darkMode .patientInfoHolder {
     background-color: var(--bg-darkMode);
 }
@@ -104,4 +108,21 @@
 .darkMode .editPatientBtn {
     color: var(--main-yellow);
     border: 3px solid var(--main-yellow);
+}
+
+.addPatient {
+    background-color: var(--main-green-darkMode);
+    color: #fff;
+    cursor: pointer;
+}
+
+.darkMode .addPatient {
+    color: var(--bg-darkMode);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .addPatient {
+        width: 100%;
+    }
 }

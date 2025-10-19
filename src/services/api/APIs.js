@@ -2,6 +2,7 @@
 import axiosClient from "@/lib/axiosClient";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
+import axios from "axios";
 
 export const login = async () => {
     const res = await axiosClient.get(process.env.NEXT_PUBLIC_API_AUTH);
@@ -40,3 +41,19 @@ export const delete_patients = async (id) => {
     const res = await axiosClient.delete(`${process.env.NEXT_PUBLIC_API_PATIENT}/${id}`, token);
     return res.data;
 }
+
+export const create_patients = async (data) => {
+    const token = await prepareToken();
+
+    const axiosPost = axios.create({
+        baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    const res = await axiosPost.post(`${process.env.NEXT_PUBLIC_API_PATIENT}`, data);
+    return res.data;
+}
+

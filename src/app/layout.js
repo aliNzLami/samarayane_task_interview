@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import ReduxProvider from "@/lib/redux/provider";
+import { ToastContainer } from 'react-toastify';
 import "@/styles/globals.css";
 import "@/styles/auth.css";
 import '@/styles/dashboard.css';
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       >
         <ReduxProvider>
           {children}
+          <ToastContainer />
         </ReduxProvider>
       </body>
     </html>
