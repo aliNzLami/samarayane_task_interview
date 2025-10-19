@@ -2,7 +2,7 @@
 A modern, responsive admin panel for managing patient records—built with minimal design and full SSR support.
 
 ## 🚀 Live Demo
-https://alinzlami.github.io/dreamNote/
+https://samarayaneh-interview-alinabizade.netlify.app/
 
 
 ## ✨ Features
