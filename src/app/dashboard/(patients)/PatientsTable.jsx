@@ -23,7 +23,6 @@ function PatientsTable() {
         updatePatientsList(dispatch);
     }, [])
 
-
     return (
         <>
             <Modal isOpen={patientModal} onClose={() => setPatientModal(false)}>

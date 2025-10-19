@@ -1,9 +1,9 @@
 'use client'
 
 import Input from "@/components/Input"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
-function PatientForm({readForm, canEdit}) {
+function PatientForm({readForm, canEdit, initialData}) {
 
     const [formStates, setFormStates] = useState([
         {
@@ -33,6 +33,22 @@ function PatientForm({readForm, canEdit}) {
         readForm([...newForm])
     }
 
+    const setDefault = () => {
+        const newForm = [...formStates];
+
+        for(let i of newForm) {
+            i.value = initialData[i.title]
+        }
+        
+        setFormStates([...newForm]);
+    }
+
+    useEffect(() => {
+      if(initialData) {
+        setDefault();
+      }
+    }, [])
+    
     return (
         <div className='patientInfoHolder pt-4 pb-10'>
             {
@@ -42,7 +58,7 @@ function PatientForm({readForm, canEdit}) {
                         <input 
                             onChange={(e) => onChangeHandler({value: e.target.value, index}) } 
                             type="date" 
-                            defaultValue={item.value}
+                            defaultValue={initialData ? item.value.slice(0, 10) : ""}
                             disabled={!canEdit}
                         />
                     :

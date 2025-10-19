@@ -8,9 +8,11 @@ import Loader from '@/components/Loader';
 import { toast } from 'react-toastify';
 import { create_patients } from '@/services/api/APIs';
 import { updatePatientsList } from '@/services/helpers/updatePatients';
+import { useDispatch } from 'react-redux';
 
 function AddPatient() {
 
+    const dispatch =  useDispatch();
     const [showModal, setShowModal] = useState(false);
     const [loading, setLoading] = useState(false);
     let formStates = null;
@@ -48,10 +50,9 @@ function AddPatient() {
         create_patients(data)
         .then(res => {
             setLoading(false);
-            updatePatientsList()
-            .then(res => {
-                setShowModal(false);
-            })
+            updatePatientsList(dispatch)
+            setShowModal(false);
+            toast.success('بیمار با موفقیت افزوده شد')
         })
         .catch(err => {
             setLoading(false);

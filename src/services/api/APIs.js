@@ -43,7 +43,8 @@ export const delete_patients = async (id) => {
 }
 
 export const create_patients = async (data) => {
-    const token = await prepareToken();
+    const cookieStore = await cookies();
+    const token = cookieStore.get('token')?.value;
 
     const axiosPost = axios.create({
         baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
@@ -54,6 +55,23 @@ export const create_patients = async (data) => {
     })
 
     const res = await axiosPost.post(`${process.env.NEXT_PUBLIC_API_PATIENT}`, data);
+    return res.data;
+}
+
+
+export const edit_patients = async (id , data) => {
+    const cookieStore = await cookies();
+    const token = cookieStore.get('token')?.value;
+
+    const axiosPost = axios.create({
+        baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+    })
+
+    const res = await axiosPost.put(`${process.env.NEXT_PUBLIC_API_PATIENT}/${id}`, data);
     return res.data;
 }
 
